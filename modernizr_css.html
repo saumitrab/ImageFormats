@@ -1,0 +1,38 @@
+<!DOCTYPE HTML>
+<html>
+
+<head>
+  <title>Webp jpg test</title>
+  <style>
+    #display-image:before {
+      content: "Webp: 386 KB";
+    }
+
+    .no-webp #display-image:before {
+      content: "JPG: 879 KB";
+    }
+
+    #display-image {
+      background-image: url("./images/ipad_sg_vert.webp");
+      background-repeat: no-repeat;
+      height: 1366px;
+      width: 1536px;
+    }
+
+    .no-webp #display-image {
+      background-image: url("./images/ipad_sg_vert.jpg");
+      background-repeat: no-repeat;
+      height: 1366px;
+      width: 1536px;
+    }
+  </style>
+</head>
+
+<body>
+  <script src="scripts/modernizr-custom.js"></script>
+  <div>
+    <div id="display-image"></div>
+  </div>
+</body>
+
+</html>

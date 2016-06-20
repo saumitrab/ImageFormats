@@ -1,0 +1,27 @@
+<!DOCTYPE HTML>
+<html>
+
+<head>
+  <title>Image Display Demo</title>
+</head>
+
+<body>
+  <script src="./scripts/modernizr-custom.js"></script>
+  <script>
+    Modernizr.on('webp', function (webpSupport) {
+      var image = document.getElementById('image-tag');
+      var divinfo = document.getElementById('div-info');
+      if (webpSupport == false) {
+        divinfo.innerHTML = "JPG: 879 KB";
+        image.src = image.getAttribute('data-jpg');
+      } else {
+        divinfo.innerHTML = "Webp: 386 KB";
+        image.src = image.getAttribute('data-webp');
+      }
+    });
+  </script>
+
+  <div id="div-info">ttt</div>
+  <img data-webp="./images/ipad_sg_vert.webp" data-jpg="./images/ipad_sg_vert.jpg" id="image-tag" alt="doesn't look like an ipad"></img>
+</body>
+</html>
